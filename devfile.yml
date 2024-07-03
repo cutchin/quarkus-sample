@@ -7,6 +7,10 @@ components:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
       memoryLimit: 1G
       mountSources: true
+      endpoints:
+        - name: debugger
+          targetPort: 5050
+          exposure: internal
   - name: postgres
     container:
       image: registry.redhat.io/rhel9/postgresql-15
