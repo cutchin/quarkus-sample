@@ -6,7 +6,6 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Named;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.PathParam;
-import org.apache.camel.Body;
 
 import java.util.Collection;
 

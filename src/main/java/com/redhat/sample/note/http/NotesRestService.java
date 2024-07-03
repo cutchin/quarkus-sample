@@ -9,7 +9,7 @@ import jakarta.ws.rs.core.MediaType;
 
 import java.util.Collection;
 
-@Path("/notes")
+@Path("/camel/notes")
 @Produces(MediaType.APPLICATION_JSON)
 public class NotesRestService {
 
