@@ -28,7 +28,7 @@ public class RestServiceTest {
     given()
       .contentType("text/plain")
       .body(sampleText)
-      .when().post("/camel/notes")
+      .when().post("/notes")
       .then()
       .statusCode(200)
       .log().body()
@@ -36,7 +36,7 @@ public class RestServiceTest {
       .body("id", Matchers.instanceOf(Integer.class));
 
     // Get all notes, make sure ours is present
-    var getResponse = given().when().get("/camel/notes").then().statusCode(200).extract().response();
+    var getResponse = given().when().get("/notes").then().statusCode(200).extract().response();
 
     var responseArray = getResponse.getBody().as(Note[].class);
 
