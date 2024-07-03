@@ -19,6 +19,12 @@ components:
           value: cpg4Y8sZ
         - name: POSTGRESQL_DATABASE
           value: sample
+      endpoints:
+        - name: postgres
+          targetPort: 5432
+          exposure: internal
+          attributes:
+            discoverable: 'true'
 commands:
   - id: build
     exec:
