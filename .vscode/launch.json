@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Notes App - Dev Mode",
+            "request": "launch",
+            "program": "${workspaceFolder}/gradlew",
+            "console": "integratedTerminal",
+            "type": "java",
+            "args": ["quarkusDev"]
+        },
+        {
+            "name": "Notes App",
+            "request": "launch",
+            "program": "${workspaceFolder}/gradlew",
+            "console": "integratedTerminal",
+            "type": "java",
+            "args": ["quarkusRun"]
+        }
+    ]
+}
