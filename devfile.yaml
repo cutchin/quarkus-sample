@@ -7,10 +7,6 @@ components:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
       memoryLimit: 1G
       mountSources: true
-      endpoints:
-        - name: debugger
-          targetPort: 5050
-          exposure: none
   - name: postgres
     container:
       image: registry.redhat.io/rhel9/postgresql-15
@@ -27,21 +23,3 @@ components:
         - name: postgres
           targetPort: 5432
           exposure: internal
-commands:
-  - id: build
-    exec:
-      label: "Build application"
-      component: tools
-      workingDir: "${PROJECT_SOURCE}"
-      commandLine: ./gradlew build
-      group:
-        kind: build
-        isDefault: true
-  - id: run
-    exec:
-      label: "Run application"
-      component: tools
-      workingDir: "${PROJECT_SOURCE}"
-      commandLine: ./gradlew quarkusDev
-      group:
-        kind: run
