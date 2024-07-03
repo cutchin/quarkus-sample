@@ -9,7 +9,7 @@ components:
       mountSources: true
   - name: postgres
     container:
-      image: image-registry.openshift-image-registry.svc:5000/rhn-support-jcutchin-dev/postgresql-15
+      image: quay.io/sclorg/postgresql-15-c9s
       memoryLimit: 512M
       env:
         - name: POSTGRESQL_USER
