@@ -5,7 +5,9 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Named;
 import jakarta.transaction.Transactional;
+import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.QueryParam;
 
 import java.util.Collection;
 
@@ -32,5 +34,10 @@ public class NotesService {
   public void deleteNote(@PathParam("id") Long id) {
     Note note = Note.findById(id);
     note.delete();
+  }
+
+  @Path("/search")
+  public void searchNotes(@QueryParam("text") String searchString) {
+    //
   }
 }
